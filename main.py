@@ -91,7 +91,36 @@ def show_common_numbers(lst,lst1):
     result = get_common_numbers(lst,lst1)
     print(f' Prima lista de numere : {lst} si a doua lista de numere {lst1} au elementele comune : {result}')
 
+def get_concatenated_numbers(lst,lst1):
+    '''
+    Concateneaza cele doua liste si verifica daca sunt palindroame
+    :param lst: Prima lista cu termeni
+    :param lst1: A doua lista de elemente
+    :return:O lista in care elementele de pe aceeasi pozitie sunt concatenate si palindroame
+    '''
+    result=[]
 
+
+    for num in lst and lst1:
+        ogl=0
+        if num in lst:
+            num1= str(num)
+        if num in lst1:
+            num2= str(num)
+        (num1) == str(num1) + str(num2)
+        z=int(num1)
+        num1 = int(num1)
+        if (num1)!=0:
+            ogl= ogl*10 +int(num1) %10
+            (num1) = int(num1) // 10
+        if z == ogl:
+            result.append(int(num1))
+
+    return result
+
+def show_concatenate_palindrome(lst,lst1):
+    result = get_concatenated_numbers(lst,lst1)
+    print(f'Numerele din lista {lst} si lista {lst1} concatenate pe aceeasi pozitie au ca elemente palindroame {result}')
 
 def main():
     lst=[]
@@ -107,7 +136,7 @@ def main():
         elif option == '3' :
             show_common_numbers(lst,lst1)
         elif option == '4' :
-            pass
+            show_concatenate_palindrome(lst,lst1)
         elif option == '5' :
             pass
         elif option == 'x' :
