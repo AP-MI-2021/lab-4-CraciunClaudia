@@ -56,8 +56,17 @@ def test_get_even_list_1():
     assert get_even_list_1([ 5,6,7,8]) == [6,8]
     assert get_even_list_1([ 1]) == []
     assert get_even_list_1([ 50,70,80]) == [50,70,80]
-def show_even_lists(lst):
-    pass
+def show_even_lists(lst,lst1):
+    nr = 0
+    nr1 = 0
+    for num in lst :
+        nr = nr + 1
+    for num in lst1 :
+        nr1 = nr1 +1
+    if nr == nr1 :
+        return True
+    return False
+
 
 
 def main():
@@ -70,7 +79,7 @@ def main():
             lst=read_list()
             lst1=read_list_1()
         elif option == '2' :
-            show_even_lists()
+            print(show_even_lists(lst,lst1))
         elif option == '3' :
             pass
         elif option == '4' :
