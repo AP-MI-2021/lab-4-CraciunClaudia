@@ -67,6 +67,30 @@ def show_even_lists(lst,lst1):
         return True
     return False
 
+def get_common_numbers(lst,lst1):
+    '''
+    Determina daca numerele din prima lista se afla si in a doua lista
+    :param lst: Lista de numere din prima lista
+    :param lst1: Lista de numere din a doua lista
+    :return: O lista de numere cu elementele comune din prima si a doua lista
+    '''
+    result=[]
+    lst.sort()
+    lst1.sort()
+    for num in lst and lst1:
+        if lst == lst1 :
+            result.append(num)
+    return result
+
+def test_get_common_numbers():
+    assert get_common_numbers([3,4,5],[3,4,5]) == [3,4,5]
+    assert get_common_numbers([ 30,20,21],[50,22,44]) == []
+    assert get_common_numbers([ 211,444, 567],[321,424,525]) == []
+
+def show_common_numbers(lst,lst1):
+    result = get_common_numbers(lst,lst1)
+    print(f' Prima lista de numere : {lst} si a doua lista de numere {lst1} au elementele comune : {result}')
+
 
 
 def main():
@@ -81,7 +105,7 @@ def main():
         elif option == '2' :
             print(show_even_lists(lst,lst1))
         elif option == '3' :
-            pass
+            show_common_numbers(lst,lst1)
         elif option == '4' :
             pass
         elif option == '5' :
@@ -95,4 +119,5 @@ def main():
 if __name__ == '__main__' :
     test_get_even_list()
     test_get_even_list_1()
+    test_get_common_numbers()
     main()
